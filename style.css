@@ -14,6 +14,7 @@
 	--clr-yellow-500: hsl(39, 100%, 71%);
 	--clr-white: hsl(0, 0%, 100%);
 	--clr-black: hsl(0, 0%, 7%);
+    --clr-background: hsl(0 0% 96.1%);
 
 	/* Spacing */
 	--space-8xs: clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem);
@@ -40,26 +41,53 @@
 	--fs-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
 	--fs-4: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
 	--fs-5: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
+
+	/* border-radius */
+	--rounded-md: 8px;
+}
+
+/* Utilitiy Classes */
+.text--purple {
+    color: var(--clr-purple-500);
+}
+.text--yellow {
+    color: var(--clr-yellow-500);
+}
+
+h2 { 
+    text-wrap: balance;
 }
 
 body {
 	font-family: "DM Sans", sans-serif;
-	background: var(--clr-white);
+	background-color: var(--clr-background);
 	font-size: var(--fs--1);
+	padding: var(--space-m);
 }
 
 .bento {
 	display: grid;
-    grid-template-columns: 1fr;
+	gap: var(--space-m);
+    place-items: center;
+	grid-template-columns: 1fr;
 	grid-template-areas:
-		"social"
-		"multiple"
-		"consistent"
 		"timing"
+		"multiple"
+		"consistency"
+		"social"
 		"followers"
-		"growth"
 		"schedule"
+		"growth"
 		"content";
+}
+
+.bento-item {
+	padding: var(--space-m);
+	border-radius: var(--rounded-md);
+	background-color: var(--clr-white);
+	padding: var(--space-s);
+    display: grid;
+    gap: var(--space-xs);
 }
 
 .schedule {
@@ -68,14 +96,21 @@ body {
 .social {
 	grid-area: social;
 }
-.timming {
-	grid-area: timming;
+.timing {
+	grid-area: timing;
+    background-color: var(--clr-purple-500);
+    text-align: center;
+    color: var(--clr-white);
+    img {
+        margin-inline: auto;
+    }
 }
 .content {
 	grid-area: content;
 }
 .multiple {
 	grid-area: multiple;
+    background-color: var(--clr-white-500);
 }
 .growth {
 	grid-area: growth;
@@ -86,3 +121,10 @@ body {
 .followers {
 	grid-area: followers;
 }
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+
