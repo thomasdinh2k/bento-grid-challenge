@@ -47,3 +47,42 @@ body {
 	background: var(--clr-white);
 	font-size: var(--fs--1);
 }
+
+.bento {
+	display: grid;
+    grid-template-columns: 1fr;
+	grid-template-areas:
+		"social"
+		"multiple"
+		"consistent"
+		"timing"
+		"followers"
+		"growth"
+		"schedule"
+		"content";
+}
+
+.schedule {
+	grid-area: schedule;
+}
+.social {
+	grid-area: social;
+}
+.timming {
+	grid-area: timming;
+}
+.content {
+	grid-area: content;
+}
+.multiple {
+	grid-area: multiple;
+}
+.growth {
+	grid-area: growth;
+}
+.consistency {
+	grid-area: consistency;
+}
+.followers {
+	grid-area: followers;
+}
