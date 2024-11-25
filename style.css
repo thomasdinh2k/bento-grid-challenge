@@ -56,6 +56,8 @@
 
 h2 {
 	text-wrap: balance;
+	font-weight: 500;
+	line-height: 1.1;
 }
 
 body {
@@ -83,6 +85,16 @@ body {
 		"growth"
 		"schedule"
 		"content";
+
+	@media screen and (min-width: 768px) {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: 1fr 50px 0.1.2fr 1fr;
+		grid-template-areas:
+			"schedule social social timing"
+			"schedule multiple consistency timing"
+			"content multiple consistency timing"
+			"content growth followers followers";
+	}
 }
 
 .bento-item {
@@ -91,6 +103,8 @@ body {
 	background-color: var(--clr-white);
 	padding: var(--space-s);
 	display: grid;
+	width: 100%;
+	overflow: hidden;
 	gap: var(--space-s);
 	p {
 		text-wrap: pretty;
@@ -111,6 +125,15 @@ body {
 		}
 	}
 }
+
+.img-wrapper {
+	@media screen and (min-width: 768px) {
+		max-width: 100%;
+		padding-right: var(--space-m);
+		margin-right: -400px;
+	}
+}
+
 .social {
 	grid-area: social;
 	background-color: var(--clr-purple-500);
@@ -121,6 +144,7 @@ body {
 	color: var(--clr-white);
 	img {
 		margin-inline: auto;
+		width: 200px;
 	}
 }
 .timing {
@@ -141,16 +165,25 @@ body {
 .content {
 	grid-area: content;
 	background-color: var(--clr-yellow-500);
+	@media screen and (min-width: 768px) {
+		align-content: space-between;
+	  }
 }
 .multiple {
 	grid-area: multiple;
-	background-color: var(--clr-white-500);
+	background-color: var(--clr-white);
+
+	@media screen and (min-width: 768px) {
+		img {
+			max-width: 300px;
+		}
+	}
 }
 .growth {
 	grid-area: growth;
 	h2 {
 		font-size: inherit;
-		font-weight: inherit;
+		font-weight: 400;
 	}
 	img {
 		width: 200px;
@@ -178,19 +211,24 @@ body {
 }
 .followers {
 	grid-area: followers;
+	place-items: center;
 	background-color: var(--clr-purple-500);
-
-	img {
-		width: 200px;
-		@media screen and (max-width: 768px) {
-			width: 100%;
-		}
-	}
 	color: var(--clr-white);
 	h2 {
 		text-align: center;
 	}
-	place-items: center;
+	img {
+		width: 240px;
+	}
+	
+	
+	@media screen and (min-width: 768px) {
+		display: flex;
+		gap: var(--space-m);
+		h2 {
+			text-align: left;
+		}
+	}
 }
 
 img {
