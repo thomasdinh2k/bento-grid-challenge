@@ -119,8 +119,8 @@ body {
 	grid-area: schedule;
 	background-color: var(--clr-yellow-muted);
 	img {
-		width: 250px;
-		@media screen and (max-width: 768px) {
+		width: 200px;
+		@media screen and (min-width: 768px) {
 			width: 100%;
 		}
 	}
